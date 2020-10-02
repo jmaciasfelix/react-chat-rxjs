@@ -1,1 +1,1 @@
-# react-chat-rxjs
+# Chat application React ⚛️ and RxJS 🦈
