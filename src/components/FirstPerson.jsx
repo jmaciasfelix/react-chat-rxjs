@@ -1,22 +1,10 @@
-import React, { useState, useLayoutEffect } from "react";
-import chatStore from "../store/chatStore";
+import React, { useState } from "react";
+import { useChat } from "../hooks/useChat";
 
-const FirstPerson = () => {
-  const [chatState, setChatState] = useState(chatStore.initialState);
+const FirstPerson = ({nameUser = "Anonimo"}) => {
   const [msg, setMsg] = useState("");
-
-  useLayoutEffect(() => {
-    let isMounted = true;
-    let subscription
-    if (isMounted) {
-      subscription = chatStore.subscribe(setChatState);
-      chatStore.init();
-    }
-    return () => {
-      isMounted = false;
-      subscription && subscription.unsubscribe();
-    };
-  }, []);
+  
+  const {chatState, chatStore} = useChat();
 
   const onFormSubmit = (e) => {
     e.preventDefault();
@@ -30,7 +18,7 @@ const FirstPerson = () => {
 
   return (
     <div className="container">
-      <h2>Mycroft</h2>
+      <h2>{nameUser}</h2>
       <div className="chat-box">
         {chatState.data.map((message, index) => (
           <div key={index}>
@@ -49,7 +37,7 @@ const FirstPerson = () => {
         />
         <button>Send</button>
       </form>
-      <button className="clear-button" onClick={() => chatStore.clearChat()}>
+      <button className="clear-button" onClick={() => chatStore.clear()}>
         Clear Chat
       </button>
     </div>

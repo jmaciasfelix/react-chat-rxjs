@@ -1,22 +1,10 @@
-import React, { useState, useLayoutEffect } from "react";
-import chatStore from "../store/chatStore";
+import React, { useState } from "react";
+import { useChat } from "../hooks/useChat";
 
 const SecondPerson = () => {
-  const [chatState, setChatState] = useState(chatStore.initialState);
   const [msg, setMsg] = useState("");
 
-  useLayoutEffect(() => {
-    let isMounted = true;
-    let subscription
-    if (isMounted) {
-      subscription = chatStore.subscribe(setChatState);
-      chatStore.init();
-    }
-    return () => {
-      isMounted = false;
-      subscription && subscription.unsubscribe();
-    };
-  }, []);
+  const {chatState, chatStore} = useChat();
 
   const onFormSubmit = (e) => {
     e.preventDefault();

@@ -23,7 +23,7 @@ const chatStore = {
     };
     subject.next(state);
   },
-  clearChat: () => {
+  clear: () => {
     state = initialState;
     subject.next(state);
   },

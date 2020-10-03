@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import chatStore from '../store/chatStore';
+import chatStore from '../services/chatStore';
 
 const PersonSwitcher = () => {
   const [chatState, setChatState] = useState(chatStore.initialState);
