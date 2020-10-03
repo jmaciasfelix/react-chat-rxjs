@@ -6,8 +6,16 @@ const FirstPerson = () => {
   const [msg, setMsg] = useState("");
 
   useLayoutEffect(() => {
-    chatStore.subscribe(setChatState);
-    chatStore.init();
+    let isMounted = true;
+    let subscription
+    if (isMounted) {
+      subscription = chatStore.subscribe(setChatState);
+      chatStore.init();
+    }
+    return () => {
+      isMounted = false;
+      subscription && subscription.unsubscribe();
+    };
   }, []);
 
   const onFormSubmit = (e) => {

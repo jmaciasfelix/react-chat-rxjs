@@ -15,7 +15,6 @@ const chatStore = {
     subject.next(state);
   },
   subscribe: (setState) => subject.subscribe(setState),
-  unsubscribe: () => subject.unsubscribe(),
   sendMessage: (message) => {
     state = {
       ...state,
