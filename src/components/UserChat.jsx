@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useChat } from "../hooks/useChat";
 
-const FirstPerson = ({nameUser = "Anonimo"}) => {
+export const UserChat = ({nameUser = "Anonimo"}) => {
   const [msg, setMsg] = useState("");
   
   const {chatState, chatStore} = useChat();
@@ -43,5 +43,3 @@ const FirstPerson = ({nameUser = "Anonimo"}) => {
     </div>
   );
 };
-
-export default FirstPerson;
