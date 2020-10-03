@@ -1,11 +1,24 @@
-import React from 'react';
-import { UserChat, SecondPerson, PersonSwitcher } from './components';
-import './App.css';
+import React from "react";
+import { UserChat } from "./components";
+import "./App.css";
 
 const App = () => (
   <>
-  <UserChat nameUser="JesusMf"/>
-  <UserChat nameUser="Alvaro"/>
+    <div className="nav">
+      <div className="nav-title">
+        Chat React{" "}
+        <span role="img" aria-label="shark-emoji">
+          ⚛️
+        </span>{" "}
+        and RxJS{" "}
+        <span role="img" aria-label="shark-emoji">
+          🦈
+        </span>{" "}
+      </div>
+      <button className="nav-btn">+</button>
+    </div>
+    <UserChat nameUser="JesusMf" />
+    <UserChat nameUser="Alvaro" />
   </>
 );
 
