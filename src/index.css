@@ -41,6 +41,9 @@
 .btn:focus {
   outline: none;
 }
+.name-user{
+  font-size: 32px;
+}
 .chat-box {
   background: var(--color-chat);
   margin: 0 auto;
@@ -118,6 +121,7 @@
   font-weight: 700;
   background-color: white;
   transition: all 0.5s ease;
+  outline: none;
 }
 .btn-modal:hover {
   background-color: var(--color-chat);
@@ -133,6 +137,7 @@
   margin-left: 10px;
   font-weight: 700;
   margin-right: 30px;
+  outline: none;
 }
 
 #messageForm {

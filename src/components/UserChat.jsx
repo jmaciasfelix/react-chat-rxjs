@@ -18,7 +18,7 @@ export const UserChat = ({ nameUser = "Anonimo" }) => {
 
   return (
     <div className="container-chat">
-      <h2>{nameUser}</h2>
+      <h2 className="name-user">{nameUser}</h2>
       <div className="chat-box">
         {chatState.data.map((message, index) => (
           <div className="container-msg" key={index}>
