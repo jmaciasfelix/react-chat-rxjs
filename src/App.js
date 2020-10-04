@@ -6,7 +6,7 @@ import "./App.css";
 Modal.setAppElement(document.getElementById("root"));
 
 const App = () => {
-  const [users, setUsers] = React.useState([]);
+  const [users, setUsers] = React.useState(["Jesus", "Alvaro"]);
   const [modalIsOpen, setIsOpen] = React.useState(false);
   const [userChat, setUserChat] = React.useState("");
 
@@ -34,7 +34,7 @@ const App = () => {
             🦈
           </span>{" "}
         </div>
-        <button onClick={openModal} className="nav-btn">
+        <button onClick={openModal} className="btn">
           +
         </button>
         <Modal
@@ -43,15 +43,17 @@ const App = () => {
           className="modal-style"
         >
           <div>
-            <h2>Create a User</h2>
+            <h2 className="title-modal">Create a User</h2>
             <form onSubmit={createUserChat}>
               <input
+                className="input-modal"
                 type="text"
+                required
                 placeholder="Username..."
                 value={userChat}
                 onChange={(e) => setUserChat(e.target.value)}
               />
-              <button>Set user</button>
+              <button className="btn-modal">Set user</button>
             </form>
           </div>
         </Modal>

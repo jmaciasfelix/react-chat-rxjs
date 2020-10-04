@@ -38,11 +38,8 @@ export const UserChat = ({ nameUser = "Anonimo" }) => {
           placeholder="Write a message..."
           required
         />
-        <button>Send</button>
+        <button className="btn">Send</button>
       </form>
-      <button className="clear-button" onClick={() => chatStore.clear()}>
-        Clear Chat
-      </button>
     </div>
   );
 };
