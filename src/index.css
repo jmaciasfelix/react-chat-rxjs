@@ -5,6 +5,14 @@
   --color-msg-primary: #323ebe;
   --color-msg-secundary: #b5bdc4;
 }
+.inform{
+  margin-top: 100px;
+  width: 100%;
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+}
+
 .nav {
   display: flex;
   width: 100%;
