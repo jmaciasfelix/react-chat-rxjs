@@ -6,7 +6,7 @@ import "./App.css";
 Modal.setAppElement(document.getElementById("root"));
 
 const App = () => {
-  const users = [];
+  const [users, setUsers] = React.useState([]);
   const [modalIsOpen, setIsOpen] = React.useState(false);
   const [userChat, setUserChat] = React.useState("");
 
@@ -16,8 +16,7 @@ const App = () => {
 
   const createUserChat = (e) => {
     e.preventDefault();
-    users.push(userChat);
-    console.log(users.length)
+    setUsers([...users, userChat]);
     setUserChat("");
     setIsOpen(false);
   };
@@ -59,9 +58,9 @@ const App = () => {
       </div>
       {users.length ? (
         <div className="chat-grid">
-          <UserChat nameUser="JesusMf" />
-          <UserChat nameUser="Alvaro" />
-          <UserChat nameUser="Alvaro" />
+          {users.map((user) => (
+            <UserChat key={user} nameUser={user} />
+          ))}
         </div>
       ) : (
         <h1 className="inform">Create new users to test the chat</h1>
