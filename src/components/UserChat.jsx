@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { useChat } from "../hooks/useChat";
 
-export const UserChat = ({nameUser = "Anonimo"}) => {
+export const UserChat = ({ nameUser = "Anonimo" }) => {
   const [msg, setMsg] = useState("");
-  
-  const {chatState, chatStore} = useChat();
+
+  const { chatState, chatStore } = useChat();
 
   const onFormSubmit = (e) => {
     e.preventDefault();
     const messageObject = {
-      person: "first-person",
+      person: nameUser,
       text: msg,
     };
     chatStore.sendMessage(messageObject);
@@ -21,9 +21,12 @@ export const UserChat = ({nameUser = "Anonimo"}) => {
       <h2>{nameUser}</h2>
       <div className="chat-box">
         {chatState.data.map((message, index) => (
-          <div key={index}>
-            <p className={`${message.person} msg-chat`}>{message.text}</p>
-            <div className="clear"></div>
+          <div className="container-msg" key={index}>
+            {message.person === nameUser ? (
+              <p className="first-person msg-chat">{message.text}</p>
+            ) : (
+              <p className="second-person msg-chat">{message.text}</p>
+            )}
           </div>
         ))}
       </div>

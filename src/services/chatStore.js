@@ -16,6 +16,7 @@ const chatStore = {
   },
   subscribe: (setState) => subject.subscribe(setState),
   sendMessage: (message) => {
+    console.log(message)
     state = {
       ...state,
       data: [...state.data, message],
