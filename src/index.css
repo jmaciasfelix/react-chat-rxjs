@@ -1,6 +1,9 @@
 :root {
   --bg-color-blue: #3b49df;
   --bg-color-blue-hover: #323ebe;
+  --color-chat: #EEF0F1;
+  --color-msg-primary: #323ebe;
+  --color-msg-secundary: #b5bdc4;
 }
 .nav{
   display: flex;
@@ -30,49 +33,50 @@
 .nav-btn:focus {
   outline: none;
 }
-
-
-
-
-.body{
-  height: 100vh;
-}
-.container {
-  font-family: Arial, Helvetica, sans-serif;
-  padding: 1em;
-}
-
 .chat-box {
-  background: #202020;
-  margin: auto;
-  padding: 2em;
-  height: 30vh;
-  width: 60%;
+  background: var(--color-chat);
+  margin: 0 auto;
+  height: 40vh;
   border-radius: 20px;
   overflow-y: scroll;
 }
-
-.first-person,
-.second-person {
+.msg-chat {
   display: inline-block;
+  font-size: 18px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
   color: #fff;
-  height: 25px;
-  min-width: 20%;
-  max-width: 60%;
-  padding: 20px;
-  text-align: center;
-  vertical-align: middle;
+  min-height: 20px;
+  min-width: 10%;
+  max-width: 40%;
+  padding: 10px 10px;
   border-radius: 30px;
 }
-
 .first-person {
-  background: rgb(0, 173, 231);
+  background: var(--color-msg-primary);
 }
-
 .second-person {
-  background: #06c406;
+  background: var(--color-msg-secundary);
   float: right;
 }
+.container-chat {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 10px 30px;
+}
+
+.chat-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px,1fr));
+}
+
+
+
+
+
+
+
+
+
 
 .clear {
   clear: both;

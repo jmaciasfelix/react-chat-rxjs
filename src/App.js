@@ -17,8 +17,11 @@ const App = () => (
       </div>
       <button className="nav-btn">+</button>
     </div>
-    <UserChat nameUser="JesusMf" />
-    <UserChat nameUser="Alvaro" />
+    <div className="chat-grid">
+      <UserChat nameUser="JesusMf" />
+      <UserChat nameUser="Alvaro" />
+      <UserChat nameUser="Alvaro" />
+    </div>
   </>
 );
 

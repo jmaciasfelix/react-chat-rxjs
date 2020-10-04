@@ -17,12 +17,12 @@ export const UserChat = ({nameUser = "Anonimo"}) => {
   };
 
   return (
-    <div className="container">
+    <div className="container-chat">
       <h2>{nameUser}</h2>
       <div className="chat-box">
         {chatState.data.map((message, index) => (
           <div key={index}>
-            <p className={message.person}>{message.text}</p>
+            <p className={`${message.person} msg-chat`}>{message.text}</p>
             <div className="clear"></div>
           </div>
         ))}
