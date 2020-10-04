@@ -5,7 +5,7 @@
   --color-msg-primary: #323ebe;
   --color-msg-secundary: #b5bdc4;
 }
-.inform{
+.inform {
   margin-top: 100px;
   width: 100%;
   font-size: 40px;
@@ -76,11 +76,28 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
-.container-msg{
+.container-msg {
   display: block;
   clear: both;
   width: 100%;
 }
+
+.modal-style {
+  border-radius: 30px;
+  outline-style: none;
+  width: 30%;
+  margin: 10% auto;
+  color: white;
+  background-color:  var(--bg-color-blue);
+  padding: 40px;
+  -webkit-box-shadow: 2px 10px 74px 38px rgba(181, 189, 196, 1);
+  -moz-box-shadow: 2px 10px 74px 38px rgba(181, 189, 196, 1);
+  box-shadow: 2px 10px 74px 38px rgba(181, 189, 196, 1);
+}
+
+
+
+
 
 
 .switcher-div {
