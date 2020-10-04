@@ -1,25 +1,13 @@
 import React from "react";
-import { UserChat } from "./components";
-import Modal from "react-modal";
-import "./App.css";
-
-Modal.setAppElement(document.getElementById("root"));
+import { UserChat, ModalUser } from "./components";
 
 const App = () => {
   const [users, setUsers] = React.useState(["Jesus", "Alvaro"]);
   const [modalIsOpen, setIsOpen] = React.useState(false);
-  const [userChat, setUserChat] = React.useState("");
 
   function openModal() {
     setIsOpen(true);
   }
-
-  const createUserChat = (e) => {
-    e.preventDefault();
-    setUsers([...users, userChat]);
-    setUserChat("");
-    setIsOpen(false);
-  };
 
   return (
     <>
@@ -37,26 +25,14 @@ const App = () => {
         <button onClick={openModal} className="btn">
           +
         </button>
-        <Modal
-          isOpen={modalIsOpen}
-          contentLabel="Example Modal"
-          className="modal-style"
-        >
-          <div>
-            <h2 className="title-modal">Create a User</h2>
-            <form onSubmit={createUserChat}>
-              <input
-                className="input-modal"
-                type="text"
-                required
-                placeholder="Username..."
-                value={userChat}
-                onChange={(e) => setUserChat(e.target.value)}
-              />
-              <button className="btn-modal">Set user</button>
-            </form>
-          </div>
-        </Modal>
+        {modalIsOpen ? (
+          <ModalUser
+            setUsers={setUsers}
+            modalIsOpen={modalIsOpen}
+            users={users}
+            setIsOpen={setIsOpen}
+          />
+        ) : null}
       </div>
       {users.length ? (
         <div className="chat-grid">

@@ -116,12 +116,23 @@
   margin-left: 10px;
   font-size: 22px;
   font-weight: 700;
-  margin-right: 30px;
   background-color: white;
   transition: all 0.5s ease;
 }
 .btn-modal:hover {
   background-color: var(--color-chat);
+}
+
+.btn-close{
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 22px;
+  margin-left: 10px;
+  font-weight: 700;
+  margin-right: 30px;
 }
 
 #messageForm {
